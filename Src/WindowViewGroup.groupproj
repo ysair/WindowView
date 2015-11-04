@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{33AA147F-FB76-467F-8E8B-B5D265139EA7}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="WindowView.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="WindowExp.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="WindowView">
+			<MSBuild Projects="WindowView.dproj"/>
+		</Target>
+		<Target Name="WindowView:Clean">
+			<MSBuild Targets="Clean" Projects="WindowView.dproj"/>
+		</Target>
+		<Target Name="WindowView:Make">
+			<MSBuild Targets="Make" Projects="WindowView.dproj"/>
+		</Target>
+		<Target Name="WindowExp">
+			<MSBuild Projects="WindowExp.dproj"/>
+		</Target>
+		<Target Name="WindowExp:Clean">
+			<MSBuild Targets="Clean" Projects="WindowExp.dproj"/>
+		</Target>
+		<Target Name="WindowExp:Make">
+			<MSBuild Targets="Make" Projects="WindowExp.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="WindowView;WindowExp"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="WindowView:Clean;WindowExp:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="WindowView:Make;WindowExp:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

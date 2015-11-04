@@ -1,0 +1,19 @@
+object FrmBase: TFrmBase
+  Left = 241
+  Top = 198
+  Width = 783
+  Height = 540
+  Caption = 'FrmBase'
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = #23435#20307
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDefault
+  ShowHint = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 12
+end
